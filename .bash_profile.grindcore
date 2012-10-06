@@ -35,8 +35,6 @@ alias band='t list | grep @band'
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-# required for git
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
 # MacPorts Installer addition on 2009-07-31_at_18:24:10: adding an appropriate DISPLAY variable for use with MacPorts.
 export DISPLAY=:0

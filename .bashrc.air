@@ -10,6 +10,7 @@ export HISTCONTROL=ignoredups
 HISTFILE=~/.history/.history
 HISTFILESIZE=1000
 HISTSIZE=500
+export HISTTIMEFORMAT='%F %T '
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -19,13 +20,23 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
 # enable color support of ls and also add handy aliases
+
+alias untar='tar -xvzf '
+
+mktar ()
+{
+dir=$1;
+if [[ $dir != "" ]]
+then
+	tar cfvz $dir.tgz $dir;
+else
+	echo "no specified file or directory for tar ($dir)"
+fi
+}		
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# say sup 
-#say "whuddup dawg?"
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
