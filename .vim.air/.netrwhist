@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/mmedeiros/git_repos/puppet/src/modules'
+let g:netrw_dirhist_2='/Users/mmedeiros/git_repos/puppet/src/modules/apache'
+let g:netrw_dirhist_3='/Users/mmedeiros/Dropbox/work_configs/.vim'
+let g:netrw_dirhist_4='/Users/mmedeiros/git_repos/bootcamp'
+let g:netrw_dirhist_5='/Users/mmedeiros/whois_file'
