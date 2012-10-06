@@ -1,0 +1,500 @@
+for USER in hslav jthom cthom; do ./parse_follow.pl -u $USER; echo; done
+follow
+for USER in hslav jthom cthom; do ./parse_follow.pl -u $USER; echo; done
+follow
+vim \!cm_todo.txt
+follow
+dev
+follow
+./parse_follow.pl -u smack
+follow
+clear
+./parse_follow.pl -u cthom
+watch ./parse_follow.pl -u cthom
+clar
+clear
+watch ./parse_follow.pl -u cthom
+./parse_follow.pl -u cthom
+clear
+./parse_follow.pl -u cthom
+clear ; ./parse_follow.pl -u cthom
+clear ; ./parse_follow.pl -u cthom
+clear ; ./parse_follow.pl -u cthom
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u hslav
+clear ; ./parse_follow.pl -u jthom
+clear ; ./parse_follow.pl -u jthom
+clear ; ./parse_follow.pl -u jthom
+clear ; ./parse_follow.pl -u jthom
+dev
+kdo
+open ~/Desktop/
+open .
+dev
+follow
+follow
+follow
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+vim foo
+cat foo 
+echo 20110511184402_nmkef_TST_LCS.txt
+echo ls1305315849-webe3-20846--2082195987-142109-142109
+rm foo 
+ls
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+deve
+dev
+cd Documents/CM/scripts/
+ls
+cd ../mmedeiros_dirs/
+ls
+cat backup_work_stuff 
+sh backup_work_stuff 
+dev
+dev
+follow
+./parse_follow.pl -u ymad
+follow
+follow
+follow
+follow
+top
+cd Desktop/
+vim mike.ics
+cd Music/
+ls
+cd iTunes/*/Kalopsia
+ls
+ls | grep -i promo
+cd Kalopsia\ 2011\ Promo/
+ls
+open .
+top
+cd Desktop/
+vim foo
+cat f
+cat foo 
+cat foo  | wc -l
+cat foo  | sort |uniq | wc -l
+mv foo meatfest2.txt
+t add @band @kalopsia setup bandcamp page
+t add @now plan 4 weeks vacation
+t add @now high level month overview for remainder 2011
+cd Desktop/
+vim reid.ics
+vim mailer.ics
+follow
+cd -
+vim gah.ics
+ls | grep ics
+rm *ics
+vim allhands.ics
+ls
+ls *ics
+rm allhands.ics 
+vim sma.ics
+ls
+clear
+vim foo.ics
+rm foo.ics 
+ls
+dev
+dev
+dev
+dev
+follow
+vim \!cm_todo.txt
+dev
+dev
+kdo
+open .
+dev
+follow
+cat \!cm_todo.txt
+clear
+cat \!cm_todo.txt
+dev
+follow
+./parse_follow.pl -u smack
+follow
+cd Dropbox/
+cd summer/kalopsia/
+ls
+cd lyrics/
+ls
+clear
+ls 
+vim death\ starts\ the\ horror.txt 
+ls
+open dsth_new.txt 
+cp Invoke\ the\ Curse.txt 
+cp Invoke\ the\ Curse.txt invoke_reformatted.txt
+mv dsth_new.txt dsth_reformatted.txt
+vim invoke_reformatted.txt 
+clear
+history | tail
+cp Marred\ by\ Tragedy.txt marred_reformatted.txt
+vim marred_reformatted.txt 
+rm *~
+follow
+vim foo
+cat foo 
+dev
+cd Desktop/
+vim luis.ics
+rm luis.ics 
+ls
+follow
+follow
+dev
+dev
+dev
+follow
+./parse_follow.pl -u jthom
+clear
+clear; ./parse_follow.pl -u jthom
+clear; ./parse_follow.pl -u jthom
+clear; ./parse_follow.pl -u jthom
+clear; ./parse_follow.pl -u hslav
+clear; ./parse_follow.pl -u hslav
+clear; ./parse_follow.pl -u hslav
+clear; ./parse_follow.pl -u hslav
+clear; ./parse_follow.pl -u hslav
+clear; ./parse_follow.pl -u cthom
+clear; ./parse_follow.pl -u cthom
+clear; ./parse_follow.pl -u cthom
+clear
+follow
+follow
+dev
+dev
+cd Desktop/
+vim intie.ics
+follow
+follow -k osd
+./parse_follow.pl -k osd
+cd -
+cd 
+cd Desktop/
+vim glob.ics
+cd Desktop/
+vim foo.ic
+foll
+cat \!cm_todo.txt
+vim \!cm_todo.txt
+dev
+dev
+dev
+dev
+follow
+./parse_follow.pl -u madri
+follow
+./parse_follow.pl -u madri
+clear
+./parse_follow.pl -u madri
+dev
+cd Desktop/
+vim intie.ics 
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+t add Yoga class with Summer
+cd Desktop/tmp/
+grep -i summ *ics
+follow
+dev
+cd Desktop/
+vim sma.ics
+deve
+dev
+dev
+dev
+dev
+dev
+cd Desktop/
+vim foo
+mv foo foo.ics
+mv foo.ics inbnd.ics
+vim link.ics
+dev
+follow
+cat \!cm_todo.txt
+todo
+dev
+dev
+t list
+follow 
+cd Desktop/
+vim inb_sup.ics
+cd Library/Thunderbird/Profiles/xhfwv0ib.default/
+ls
+find . | grep -l outstanding 
+find . | xargs grep -l outstanding 
+ls -al
+find . | grep -i filt
+find . | grep -i filterr
+view ./ImapMail/imap.cheetahmail.com/msgFilterRules.dat
+vim ./ImapMail/imap.cheetahmail.com/msgFilterRules.dat
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+cd Desktop/
+vim hil.ics
+dev
+vim foo
+dev
+dev
+cd Desktop/
+vim shah.ics
+ls *ics
+rm hil.ics 
+rm shah.ics 
+rm link.ics 
+rm inbnd.ics 
+rm inb_sup.ics 
+ls 
+open .
+dev
+follow
+dev
+vim foo
+cat foo
+dev 
+dev
+cd Desktop/
+vim in.ics
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+cd Desktop/
+vim thom.ics
+dev
+dev
+cd Desktop/
+ls
+vim 1.ics
+dev
+ls *cs
+rm *cs
+dev
+dev
+dev
+cd Desktop/
+vim foo
+mv foo fi.ics
+follow
+./parse_follow.pl -u jthomp
+dev
+deve
+dev
+dev
+dev
+dev
+dev
+dev
+follow
+top
+cd Desktop/
+vim 1.ics
+follow
+cd Desktop/
+vim foo
+mv foo foo.ics
+cd Desktop/
+vim my_dev.ics
+rm my_dev.ics 
+dev
+dev
+cd Desktop/
+vim goh.ics
+grep -i summ *ics
+grep -i summ *ics
+rm *ics
+grep -i summ *ics
+open .
+dev
+ls
+dev
+cd Desktop/
+vim fii.ics
+rm fii.ics 
+vim fii.ics
+rm fii.ics 
+dev
+dev
+follow
+./parse_follow.pl -u ymadri
+follow
+./parse_follow.pl 
+follow 
+dev
+cd Desktop/
+vim foo
+mv foo foo.ics
+cd Desktop/
+vim hil.ics
+grep -i sum *cs
+view foo.ics 
+open foo.ics 
+rm foo.ics 
+rm hil.ics 
+vim foo
+vim fo
+vim fo
+follow
+./parse_follow.pl -k meet
+./parse_follow.pl -u smack
+follow
+./parse_follow.pl -u smack
+clear
+./parse_follow.pl -u smack
+dev
+follow
+cd Desktop/
+vim foo.ics
+vim foo.ics 
+rm foo.ics 
+vim foo.ics 
+rm foo.ics 
+vim foo.ics 
+follow
+follow
+vim foo
+cat fo
+cat foo
+cat foo | sort -c2
+man sort
+cat foo | sort -k2
+dev
+dev
+cd Documents/CM/
+find . | grep odt
+find .  | grep -i escala
+dev
+deve
+cd Desktop/
+vim ema.ics
+rm ema.ics 
+follow
+egrep "smack|cmoul|vko|ymad"
+egrep "smack|cmoul|vko|ymad" followup.txt
+clear
+egrep "smack|cmoul|vko|ymad" followup.txt
+echo ; egrep "smack|cmoul|vko|ymad" followup.txt
+echo ; egrep "smack|cmoul|vko|ymad" followup.txt | sort 
+vim followup.txt
+vim followup.txt
+cd Desktop/
+vim fo
+mv fo fo.ics
+vim jay.ics
+rm *ics
+ls
+open .
+dev
+dev
+cd Documents/CM/mmedeiros_dirs/
+ls
+cat backup_work_stuff 
+sh backup_work_stuff 
+t add @band @funebrarum get money from MDF
+cd Desktop/
+vim foo.ics
+dev
+deve
+dev
+vim .bashrc
+scp mmedeiros@devt1:~/.bashrc dev_bashrc
+vimdiff .bashrc dev_bashrc 
+dev
+dev
+dev
+dev
+dev
+dev
+dev
+ls -al
+ls -al /Volumes/Backup_2TB/backup/
+ls -l ~/Dropbox/configs/
+ls -a ~/Dropbox/configs/
+ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim"
+ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim | grep -v "~""
+ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~"
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~"`; do echo $FILE; done
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~" | grep -v save `; do echo $FILE; done
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~" | grep -v save `; do echo $FILE; cp ~/; done
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~" | grep -v save `; do echo $FILE; cp $FILE ~/; done
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~" | grep -v save `; do echo $FILE; done
+for FILE in `ls -a ~/Dropbox/configs/ | egrep "bash|tod|vim" | grep -v "~" | grep -v save `; do echo $FILE; cp ~/Dropbox/configs/$FILE ~/; done
+cd /Volumes/Backup_2TB/backup/
+ls -al
+cd Library/
+ls 
+ls -al
+cd ../
+find . | grep bashrc
+ls -al ~/
+cd ~/Library/Application\ Support/
+ls
+ls -althr
+ls -al
+ls AddressBook
+ls -al
+ls -al AddressBook
+ls -al AddressBook/
+pwd
+ls -al
+ls ~/
+ls -al
+ls -alh
+ls -alh ~/
+history
+clearclear
