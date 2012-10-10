@@ -20,7 +20,7 @@ fi
 PATH=$PATH:/Applications/todo.sh/
 
 # Avoid typing todo.sh every time. 
-alias t='clear; todo.sh -d /Users/mmedeiros/.todo'
+alias t='clear; todo.sh -d /Users/matt/.todo'
 alias ctodo='cd /Users/matt/Documents/CM/!!todo/; vim *todo.txt'
 alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.txt'
 alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
