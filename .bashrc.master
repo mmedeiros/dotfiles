@@ -71,14 +71,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
     alias ls='ls -G'
-		alias dev='ssh mmedeiros@devt1.cheetahmail.com'
-		alias deve='ssh mmedeiros@deve1.cheetahmail.com'
 		alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
 		alias nyc01='ssh mmedeiros@ops-screendoor01.nyc01.shuttercorp.net'
 		alias finf='find . 2> /dev/null |  xargs grep -l 2>/dev/null'
-		alias gpp='git pull origin && git push' 
+		alias gpp='clear && git pull origin && git push' 
 fi
 
 
@@ -86,6 +83,7 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias toobig='find * ! -type l -ls | sort -k 7nr'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

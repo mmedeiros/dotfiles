@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If not running interactively, don't do anything:
+# If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -23,8 +23,6 @@ shopt -s checkwinsize
 if [ "$TERM" != "dumb" ]; then
     eval "`dircolors -b`"
     alias ls='ls --color=auto'
-    #alias dir='ls --color=auto --format=vertical'
-    #alias vdir='ls --color=auto --format=long'
 fi
 
 # some more ls aliases
@@ -32,14 +30,9 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 PATH=$PATH:$HOME/bin:/data/cheetah/bin
-alias txname='/data/cheetah/bin/tx said_saname'
-alias txsaid='/data/cheetah/bin/tx saname_said'
 alias db='rlwrap /usr/local/oracle/OraHome1/bin/sqlplus cheetah_mail'
-alias cip='cd git/ops/networking/mta_conf/;vim cheetah_ip_space.txt'
-alias dclib='cd /data/cheetah/lib/CTAH'
 alias finf='find . -type f | xargs grep'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
-#alias mktar='tar -cvz'
 alias untar='tar -xvzf '
 
 mktar ()
@@ -80,7 +73,7 @@ xterm*|rxvt*)
 esac
 
 # enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profiles
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 #if [ -f /etc/bash_completion ]; then
 #    . /etc/bash_completion
