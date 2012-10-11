@@ -12,46 +12,7 @@ HISTFILESIZE=1000
 HISTSIZE=500
 export HISTTIMEFORMAT='%F %T '
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
-
-# enable color support of ls and also add handy aliases
-
-alias untar='tar -xvzf '
-
-mktar ()
-{
-dir=$1;
-if [[ $dir != "" ]]
-then
-	tar cfvz $dir.tgz $dir;
-else
-	echo "no specified file or directory for tar ($dir)"
-fi
-}		
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-xterm-color)
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    ;;
-esac
-
-# Comment in the above and uncomment this below for a color prompt
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-# If this is an xterm set the title to user@host:dir
+# Set the xterm title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
@@ -60,34 +21,62 @@ xterm*|rxvt*)
     ;;
 esac
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
-#if [ -f ~/.bash_aliases ]; then
-#    . ~/.bash_aliases
-#fi
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-# enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    alias ls='ls -G'
-		alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
-		alias nyc01='ssh mmedeiros@ops-screendoor01.nyc01.shuttercorp.net'
-		alias finf='find . 2> /dev/null |  xargs grep -l 2>/dev/null'
-		alias gpp='clear && git pull origin && git push' 
-fi
+############################
+##        Todo.txt        ##
+############################
+
+# access ToDo from anywhere 
+PATH=$PATH:/Applications/todo.sh/
+
+# Avoid typing todo.sh every time. 
+alias t='clear; todo.sh -d /Users/matt/.todo'
+alias dohome='t list | grep -v @cheet|grep -v @stall|grep -v @project|grep -v @band'
+alias band='t list | grep @band'
+
+############################
+## Welcome to Aliastown!! ##
+############################
+
+# So little time, so much todo 
+alias ctodo='cd /Users/matt/Documents/CM/!!todo/; vim *todo.txt'
+alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.txt'
+
+# Band Stuff 
+alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+# Hack Utils 
+alias finf='find . 2> /dev/null |  xargs grep -l 2>/dev/null'
+alias gpp='clear && git pull origin && git push' 
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-#if [ -f /etc/bash_completion ]; then
-#    . /etc/bash_completion
-#fi
+# Tar syntax is a pain in the ass 
+alias untar='tar -xvzf '
+
+mktar () {
+  dir=$1;
+  if [[ $dir != "" ]]
+  then
+    tar cfvz $dir.tgz $dir;
+  else
+    echo "no specified file or directory for tar ($dir)"
+  fi  
+}
+
+# Some ls aliases
+alias ls='ls -G'
+alias ll='ls -l'
+alias la='ls -A'
+#alias l='ls -CF'
+
+# Places to go, things to see 
+alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
+alias nyc01='ssh mmedeiros@ops-screendoor01.nyc01.shuttercorp.net'
+
