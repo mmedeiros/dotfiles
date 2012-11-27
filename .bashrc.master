@@ -9,7 +9,7 @@
 export HISTCONTROL=ignoredups
 HISTFILE=~/.history/.history
 HISTFILESIZE=1000
-HISTSIZE=500
+HISTSIZE=2000
 export HISTTIMEFORMAT='%F %T '
 
 # Set the xterm title to user@host:dir
