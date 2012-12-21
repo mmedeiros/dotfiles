@@ -83,5 +83,7 @@ set ts=2
 set number
 set bg=dark
 set shiftwidth=2
+set wrap
+set textwidth=80
 syntax on
 colorscheme wombat

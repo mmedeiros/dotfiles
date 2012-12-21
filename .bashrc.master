@@ -8,8 +8,8 @@
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 HISTFILE=~/.history/.history
-HISTFILESIZE=1000
-HISTSIZE=2000
+HISTFILESIZE=10000
+HISTSIZE=10000
 export HISTTIMEFORMAT='%F %T '
 
 # Set the xterm title to user@host:dir
@@ -55,7 +55,7 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
 
 # Hack Utils 
-alias finf='find . 2> /dev/null |  xargs grep -l 2>/dev/null'
+alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias gpp='clear && git pull origin && git push' 
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 
