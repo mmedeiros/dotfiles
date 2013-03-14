@@ -59,6 +59,17 @@ alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias gpp='clear && git pull origin && git push' 
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 
+# SSL syntax haxx
+# Get general info 
+sslcsr ()  { openssl req  -text -noout < $1; }
+sslkey ()  { openssl rsa  -text -noout < $1; }
+sslcert () { openssl x509 -text -noout < $1; }
+
+# Get modulus 
+modcsr ()  { openssl req  -noout -modulus < $1; }
+modkey ()  { openssl rsa  -noout -modulus < $1; }
+modcert () { openssl x509 -noout -modulus < $1; }
+
 # Tar syntax is a pain in the ass 
 alias untar='tar -xvzf '
 
