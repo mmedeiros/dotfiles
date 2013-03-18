@@ -56,8 +56,12 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
-alias gpp='clear && git pull origin && git push' 
 alias toobig='find * ! -type l -ls | sort -k 7nr'
+
+# Git for gits
+alias gpp='clear && git pull origin && git push' 
+alias gitlog='git log --oneline --color --graph --decorate'
+alias punch='git blame'
 
 # SSL syntax haxx
 # Get general info 
