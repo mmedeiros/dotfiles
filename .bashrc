@@ -8,7 +8,7 @@
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 HISTFILE=~/.history/.history
-HISTFILESIZE=10000
+HISTFILESIZE=100000
 HISTSIZE=10000
 export HISTTIMEFORMAT='%F %T '
 
@@ -57,6 +57,8 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
+alias mtr='sudo /usr/local/sbin/mtr'
+
 
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
@@ -92,6 +94,12 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -A'
 #alias l='ls -CF'
+
+# Typos are annoying 
+alias grpe='grep' 
+alias gerp='grep'
+alias clera='clear'
+alias claer='clear'
 
 # Places to go, things to see 
 alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
