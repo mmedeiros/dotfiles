@@ -117,10 +117,10 @@ mktar () {
 }
 
 # Some ls aliases
-alias ls='ls -G'
-alias ll='ls -l'
-alias la='ls -A'
-#alias l='ls -CF'
+alias ls='ls -G --color'
+alias ll='ls -l --color'
+alias la='ls -A --color'
+#alias l='ls -CF --color'
 
 # Typos are annoying 
 alias grpe='grep' 
