@@ -117,10 +117,25 @@ mktar () {
 }
 
 # Some ls aliases
-alias ls='ls -G --color'
-alias ll='ls -l --color'
-alias la='ls -A --color'
-#alias l='ls -CF --color'
+# mac is annoying with --color
+
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" =~ Darwin ]]; then
+	platform='mac'
+elif [[ "$unamestr" =~ Linux ]]; then
+	platform='linux'
+fi
+
+if [[ $platform == 'mac' ]]; then
+  alias ls='ls -G'
+  alias ll='ls -l'
+  alias la='ls -Al'
+elif [[ $platform == 'linux' ]]; then
+	alias ls='ls --color=auto'
+  alias ll='ls -l'
+  alias la='ls -Al'
+fi
 
 # Typos are annoying 
 alias grpe='grep' 
