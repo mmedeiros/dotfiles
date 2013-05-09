@@ -59,7 +59,6 @@ alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='sudo /usr/local/sbin/mtr'
 
-
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
 alias gitlog='git log --oneline --color --graph --decorate'
@@ -75,6 +74,34 @@ sslcert () { openssl x509 -text -noout < $1; }
 modcsr ()  { openssl req  -noout -modulus < $1; }
 modkey ()  { openssl rsa  -noout -modulus < $1; }
 modcert () { openssl x509 -noout -modulus < $1; }
+
+# Smarter SSL info fetcher
+ssl () {
+	line=$(head -n 1 $1)
+	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then 
+		openssl req  -text -noout < $1;
+	elif [[ $line =~ CERTIFICATE ]] ; then 
+		openssl x509 -text -noout < $1;
+	elif [[ $line =~ KEY ]] ; then
+		openssl rsa  -text -noout < $1; 
+	else 
+		echo "Sorry, $1 is not a valid ssl file"; 
+	fi
+	}
+
+# Smarter SSL modulus 
+sslmod () {
+	line=$(head -n 1 $1)
+	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then 
+		openssl req  -modulus -noout < $1;
+	elif [[ $line =~ CERTIFICATE ]] ; then 
+		openssl x509 -modulus -noout < $1;
+	elif [[ $line =~ KEY ]] ; then
+		openssl rsa  -modulus -noout < $1; 
+	else 
+		echo "Sorry, $1 is not a valid ssl file"; 
+	fi
+	}
 
 # Tar syntax is a pain in the ass 
 alias untar='tar -xvzf '
