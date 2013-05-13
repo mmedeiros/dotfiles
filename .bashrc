@@ -116,6 +116,29 @@ mktar () {
   fi  
 }
 
+# grepped process list with header 
+# shortcut for example "ps faux | head -n1 ; ps faux | grep -C1 [y]um"
+pss () {
+  unamestr=`uname`
+  if [[ `uname` =~ Darwin ]]; then
+    echo "pss is currently for unix systems only, sorry"
+  else
+    word=$1
+    if [ "$#" == "2" ] ; then 
+      if [[ $2 =~ ^-?[0-9]+$ ]] ; then 
+        l=$2
+      fi  
+    else 
+      l=5 
+    fi  
+    front=$(echo $word | cut -c 1,2)
+    back=$(echo $word | cut -c 3-)
+    str="[$front]$back"
+    #echo "str = $str"
+    ps faux | head -n1 ; ps faux | grep -C$l $str
+  fi  
+}
+
 # Some ls aliases
 # mac is annoying with --color
 
