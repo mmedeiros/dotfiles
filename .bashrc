@@ -135,7 +135,7 @@ pss () {
     back=$(echo $word | cut -c 3-)
     str="[$front]$back"
     #echo "str = $str"
-    ps faux | head -n1 ; ps faux | grep -C$l $str
+    ps faux | head -n1 ; ps faux | grep -C$l -i $str
   fi  
 }
 
