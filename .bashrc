@@ -165,6 +165,7 @@ alias grpe='grep'
 alias gerp='grep'
 alias clera='clear'
 alias claer='clear'
+alias clea='clear'
 
 # Places to go, things to see 
 alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
