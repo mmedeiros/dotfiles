@@ -62,7 +62,8 @@ alias mtr='sudo /usr/local/sbin/mtr'
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
 alias gitlog='git log --oneline --color --graph --decorate'
-alias punch='git blame'
+alias punch='blame'
+blame () { git blame $1 | less; }
 
 # SSL syntax haxx
 # Get general info 
@@ -124,6 +125,9 @@ pss () {
     echo "pss is currently for unix systems only, sorry"
   else
     word=$1
+    if [ "$#" == "0" ] ; then 
+      ps faux 
+    else
     if [ "$#" == "2" ] ; then 
       if [[ $2 =~ ^-?[0-9]+$ ]] ; then 
         l=$2
@@ -166,6 +170,8 @@ alias gerp='grep'
 alias clera='clear'
 alias claer='clear'
 alias clea='clear'
+alias vmi='vim'
+alias ehad='head'
 
 # Places to go, things to see 
 alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
