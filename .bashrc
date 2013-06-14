@@ -70,6 +70,9 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='sudo /usr/local/sbin/mtr'
+alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
+alias vim='vim -u /home/mmedeiros/.vimrc'
+alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
 
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
@@ -171,9 +174,6 @@ if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='ls -l'
   alias la='ls -Al'
-	alias vim='vim -u /home/mmedeiros/.vimrc'
-	alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
-	alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 elif [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
   alias ll='ls -l'
