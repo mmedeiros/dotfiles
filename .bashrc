@@ -13,15 +13,27 @@ HISTSIZE=10000
 export HISTTIMEFORMAT='%F %T '
 
 # Set the xterm title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    ;;
-*)
-    ;;
-esac
+# Red for root! 
+who=`whoami`
+if [[ $who =~ root ]]; then
+	case "$TERM" in
+		xterm*|rxvt*)
+			PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+			PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
+			;;
+		*)
+			;;
+	esac
+else
+	case "$TERM" in
+		xterm*|rxvt*)
+			PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+			PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+			;;
+		*)
+			;;
+	esac
+fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -159,6 +171,9 @@ if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='ls -l'
   alias la='ls -Al'
+	alias vim='vim -u /home/mmedeiros/.vimrc'
+	alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
+	alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 elif [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
   alias ll='ls -l'
