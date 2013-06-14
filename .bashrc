@@ -51,25 +51,18 @@ PATH=$PATH:/Applications/todo.sh/
 
 # Avoid typing todo.sh every time. 
 alias t='clear; todo.sh -d /Users/matt/.todo'
-alias dohome='t list | grep -v @cheet|grep -v @stall|grep -v @project|grep -v @band'
-alias band='t list | grep @band'
 
 ############################
 ## Welcome to Aliastown!! ##
 ############################
 
-# So little time, so much todo 
-alias ctodo='cd /Users/matt/Documents/CM/!!todo/; vim *todo.txt'
-alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.txt'
-
-# Band Stuff 
-alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
-
-
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='sudo /usr/local/sbin/mtr'
+alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
+alias vim='vim -u /home/mmedeiros/.vimrc'
+alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
 
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
@@ -171,9 +164,6 @@ if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='ls -l'
   alias la='ls -Al'
-	alias vim='vim -u /home/mmedeiros/.vimrc'
-	alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
-	alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 elif [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
   alias ll='ls -l'
