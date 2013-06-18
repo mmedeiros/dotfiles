@@ -149,6 +149,16 @@ pss () {
   fi
 }
 
+# grep my history faster 
+# shortcut for "history | grep $something | tail -n 10" 
+hist () {
+	if [ "$#" == "0" ] ; then 
+		history 
+	else
+		history | grep -i $1 | tail
+	fi
+}
+
 # Some ls aliases
 # mac is annoying with --color
 
