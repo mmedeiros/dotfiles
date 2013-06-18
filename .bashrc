@@ -186,6 +186,7 @@ alias gerp='grep'
 alias clera='clear'
 alias claer='clear'
 alias clea='clear'
+alias cler='clear'
 alias vmi='vim'
 alias ehad='head'
 
