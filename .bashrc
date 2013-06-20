@@ -51,10 +51,19 @@ PATH=$PATH:/Applications/todo.sh/
 
 # Avoid typing todo.sh every time. 
 alias t='clear; todo.sh -d /Users/matt/.todo'
+alias dohome='t list | grep -v @cheet|grep -v @stall|grep -v @project|grep -v @band'
+alias band='t list | grep @band'
 
 ############################
 ## Welcome to Aliastown!! ##
 ############################
+
+# So little time, so much todo 
+alias ctodo='cd /Users/matt/Documents/CM/!!todo/; vim *todo.txt'
+alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.txt'
+
+# Band Stuff 
+alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
@@ -184,6 +193,7 @@ fi
 alias grpe='grep' 
 alias gerp='grep'
 alias clera='clear'
+alias clera='clesr'
 alias claer='clear'
 alias clea='clear'
 alias cler='clear'
