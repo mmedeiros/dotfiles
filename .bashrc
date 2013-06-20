@@ -193,7 +193,7 @@ fi
 alias grpe='grep' 
 alias gerp='grep'
 alias clera='clear'
-alias clera='clesr'
+alias clesr='clear'
 alias claer='clear'
 alias clea='clear'
 alias cler='clear'
