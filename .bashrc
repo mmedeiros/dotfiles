@@ -118,6 +118,10 @@ sslmod () {
 	fi
 	}
 
+	vdie () { 
+		`ps aux | grep -i [v]lc | awk '{print $2}' | xargs kill -9`;
+	}
+
 # Tar syntax is a pain in the ass 
 alias untar='tar -xvzf '
 
