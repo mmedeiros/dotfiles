@@ -168,6 +168,9 @@ hist () {
 	fi
 }
 
+# Print out the yyyymmdd datestamp for today 
+alias datestamp='echo $(date +%Y%m%d)'
+
 # Some ls aliases
 # mac is annoying with --color
 
@@ -193,6 +196,7 @@ fi
 alias grpe='grep' 
 alias gerp='grep'
 alias clera='clear'
+alias clar='clear'
 alias clesr='clear'
 alias claer='clear'
 alias clea='clear'
