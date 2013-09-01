@@ -72,6 +72,7 @@ alias mtr='sudo /usr/local/sbin/mtr'
 alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 alias vim='vim -u /home/mmedeiros/.vimrc'
 alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
+alias df='df -P | column -t'
 
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
@@ -174,7 +175,6 @@ hist () {
 
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
-
 # Some ls aliases
 # mac is annoying with --color
 
@@ -188,11 +188,11 @@ fi
 
 if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
-  alias ll='ls -l'
+  alias ll='clear; ls -l'
   alias la='ls -Al'
 elif [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
-  alias ll='ls -l'
+  alias ll='clear; ls -l'
   alias la='ls -Al'
 fi
 
