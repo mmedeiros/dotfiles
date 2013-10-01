@@ -173,8 +173,36 @@ hist () {
 	fi
 }
 
+# Launch browsers from command line with some syntax checks
+# Google Chrome 
+chrm () {
+	if [[ "$1" =~ https?:// ]] ; then
+		open -a /Applications/Google\ Chrome.app $1;
+	else
+		if [[ "$1" =~ "." ]] ; then
+			open -a /Applications/Google\ Chrome.app http://$1;
+		else 
+			open -a /Applications/Google\ Chrome.app http://$1.com;
+		fi
+	fi
+}
+
+# Mozilla Firefox
+fox () {
+	if [[ "$1" =~ https?:// ]] ; then
+		open -a /Applications/Firefox.app $1;
+	else
+		if [[ "$1" =~ "." ]] ; then
+			open -a /Applications/Firefox.app http://$1;
+		else 
+			open -a /Applications/Firefox.app http://$1.com;
+		fi
+	fi
+}
+
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
+
 # Some ls aliases
 # mac is annoying with --color
 
