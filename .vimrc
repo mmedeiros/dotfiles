@@ -1,4 +1,4 @@
-" An example for a vimrc file.
+" An example fo r a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2002 Sep 19
@@ -85,5 +85,17 @@ set bg=dark
 set shiftwidth=2
 set wrap
 set textwidth=80
+set tabstop=2
+set expandtab 
 syntax on
 colorscheme wombat
+
+
+" pathogen stuff
+execute pathogen#infect()
+
+" OSX Crontab crap
+if $VIM_CRONTAB == "true"
+set nobackup
+set nowritebackup
+endif
