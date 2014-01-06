@@ -46,6 +46,20 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+"-------------- Custom key bindings -------------------
+" Set custom key bindings using comma 
+let mapleader = ","
+
+" Toggle paste mode via ',pp' 
+map <leader>pp :setlocal paste!<cr>
+" Toggle line numbering via ',nn'
+map <leader>nn :setlocal number!<cr>
+" long lines 
+map <leader>ll :setlocal tw=2000000<cr>
+" da for data files (need to escape pipe)  
+map <leader>da :setlocal tw=2000000 \| setlocal paste \| setlocal nonu<cr>
+"------------------------------------------------------
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -91,8 +105,6 @@ syntax on
 colorscheme wombat
 
 
-" pathogen stuff
-execute pathogen#infect()
 
 " OSX Crontab crap
 if $VIM_CRONTAB == "true"
