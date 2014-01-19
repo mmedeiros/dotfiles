@@ -172,6 +172,8 @@ hist () {
 	fi
 }
 
+# Print out the yyyymmdd datestamp for today 
+alias datestamp='echo $(date +%Y%m%d)'
 # Some ls aliases
 # mac is annoying with --color
 
@@ -185,18 +187,20 @@ fi
 
 if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
-  alias ll='ls -l'
+  alias ll='clear; ls -l'
   alias la='ls -Al'
 elif [[ $platform == 'linux' ]]; then
 	alias ls='ls --color=auto'
-  alias ll='ls -l'
+  alias ll='clear; ls -l'
   alias la='ls -Al'
+	alias df='df -P | column -t'
 fi
 
 # Typos are annoying 
 alias grpe='grep' 
 alias gerp='grep'
 alias clera='clear'
+alias clar='clear'
 alias clesr='clear'
 alias claer='clear'
 alias clea='clear'
