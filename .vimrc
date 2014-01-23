@@ -58,6 +58,8 @@ map <leader>nn :setlocal number!<cr>
 map <leader>ll :setlocal tw=2000000<cr>
 " da for data files (need to escape pipe)  
 map <leader>da :setlocal tw=2000000 \| setlocal paste \| setlocal nonu<cr>
+" ta for tab 
+map <leader>ta :setlocal expandtab!<cr>
 "------------------------------------------------------
 
 " Only do this part when compiled with support for autocommands.
