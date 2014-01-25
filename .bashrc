@@ -65,6 +65,9 @@ alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.
 # Band Stuff 
 alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
+# Random Abbreviations 
+alias cl='clear'
+
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
@@ -72,6 +75,8 @@ alias mtr='sudo /usr/local/sbin/mtr'
 alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 alias vim='vim -u /home/mmedeiros/.vimrc'
 alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
+alias df='df -P | column -t'
+alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Git for gits
 alias gpp='clear && git pull origin && git push' 
@@ -172,9 +177,12 @@ hist () {
 	fi
 }
 
+<<<<<<< HEAD
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
 
+=======
+>>>>>>> 2c79c7a1223f5cf5b1d1179b17b9bdb4d66f3ccc
 # Launch browsers from command line with some syntax checks
 # Google Chrome 
 chrm () {
@@ -202,6 +210,12 @@ fox () {
 	fi
 }
 
+<<<<<<< HEAD
+=======
+# Print out the yyyymmdd datestamp for today 
+alias datestamp='echo $(date +%Y%m%d)'
+
+>>>>>>> 2c79c7a1223f5cf5b1d1179b17b9bdb4d66f3ccc
 # Some ls aliases
 # mac is annoying with --color
 
