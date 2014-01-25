@@ -246,3 +246,5 @@ alias cl='clear'
 alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
 alias nyc01='ssh mmedeiros@ops-screendoor01.nyc01.shuttercorp.net'
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
