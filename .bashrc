@@ -136,6 +136,16 @@ mktar () {
   fi  
 }
 
+getenv () {
+  getfile=~/Documents/scripts/getenv;
+  if [[ -a $getfile ]] 
+  then
+    sh $getfile | pbcopy; 
+  else
+    echo "getenv file does not exist!" 
+  fi  
+}
+
 # grepped process list with header 
 # shortcut for example "ps faux | head -n1 ; ps faux | grep -C1 [y]um"
 pss () {
