@@ -173,9 +173,6 @@ hist () {
 	fi
 }
 
-# Print out the yyyymmdd datestamp for today 
-alias datestamp='echo $(date +%Y%m%d)'
-
 # Launch browsers from command line with some syntax checks
 # Google Chrome 
 chrm () {
@@ -222,10 +219,10 @@ if [[ $platform == 'mac' ]]; then
   alias ll='clear; ls -l'
   alias la='ls -Al'
 elif [[ $platform == 'linux' ]]; then
-	alias ls='ls --color=auto'
+  alias ls='ls --color=auto'
   alias ll='clear; ls -l'
   alias la='ls -Al'
-	alias df='df -P | column -t'
+  alias df='df -P | column -t'
 fi
 
 # Typos are annoying 
