@@ -72,7 +72,6 @@ alias mtr='sudo /usr/local/sbin/mtr'
 alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 alias vim='vim -u /home/mmedeiros/.vimrc'
 alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
-alias df='df -P | column -t'
 alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Git for gits
