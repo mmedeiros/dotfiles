@@ -1,4 +1,4 @@
-" An example fo r a vimrc file.
+" An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2002 Sep 19
