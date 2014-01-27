@@ -5,13 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-HISTFILE=~/.history/.history
-HISTFILESIZE=100000
-HISTSIZE=10000
-export HISTTIMEFORMAT='%F %T '
-
 # Set the xterm title to user@host:dir
 # Red for root! 
 who=`whoami`
@@ -34,6 +27,26 @@ else
 			;;
 	esac
 fi
+
+# root history goes different places on linux/mac, and homedir structure changes 
+if [[ $who =~ root ]]; then 
+  if [ -d "/root"  ]; then
+    HISTFILE=/root/.bash_history 
+  elif [ -d "/var/root"  ]; then
+    HISTFILE=/var/root/.sh_history
+  else 
+    HISTFILE=~/.history/.history
+  fi 
+else 
+  HISTFILE=~/.history/.history
+fi 
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+HISTFILESIZE=100000
+HISTSIZE=10000
+export HISTTIMEFORMAT='%F %T '
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
