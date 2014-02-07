@@ -264,6 +264,7 @@ alias cler='clear'
 alias vmi='vim'
 alias ehad='head'
 alias cl='clear'
+alias pinf='ping'
 
 # Places to go, things to see 
 alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
