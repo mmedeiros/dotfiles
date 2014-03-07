@@ -81,7 +81,7 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 # Hack Utils 
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
-alias mtr='sudo /usr/local/sbin/mtr'
+alias mtr='/usr/local/sbin/mtr'
 alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
 alias vim='vim -u /home/mmedeiros/.vimrc'
 alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
@@ -92,17 +92,6 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 blame () { git blame $1 | less; }
-
-# SSL syntax haxx
-# Get general info 
-sslcsr ()  { openssl req  -text -noout < $1; }
-sslkey ()  { openssl rsa  -text -noout < $1; }
-sslcert () { openssl x509 -text -noout < $1; }
-
-# Get modulus 
-modcsr ()  { openssl req  -noout -modulus < $1; }
-modkey ()  { openssl rsa  -noout -modulus < $1; }
-modcert () { openssl x509 -noout -modulus < $1; }
 
 # Smarter SSL info fetcher
 ssl () {
@@ -229,6 +218,7 @@ fox () {
 
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
+alias now='echo $(date +%Y%m%d)'
 
 # Some ls aliases
 # mac is annoying with --color
@@ -245,11 +235,17 @@ if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='clear; ls -l'
   alias la='ls -Al'
+  alias spacehog='du -s * | sort -nr | head'
+  alias dfh='\df -h -P | column -t'
+  alias df='df -P | column -t'
+  alias md5sum='md5 -r'
 elif [[ $platform == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias ll='clear; ls -l'
   alias la='ls -Al'
+  alias dfh='\df -hP | column -t'
   alias df='df -P | column -t'
+  alias spacehog='du --max-depth=1  | sort -nr  | head'
 fi
 
 # Typos are annoying 
@@ -265,10 +261,7 @@ alias vmi='vim'
 alias ehad='head'
 alias cl='clear'
 alias pinf='ping'
-
-# Places to go, things to see 
-alias ma01='ssh mmedeiros@ops-screendoor01.ma01.shuttercorp.net'
-alias nyc01='ssh mmedeiros@ops-screendoor01.nyc01.shuttercorp.net'
+alias ssg='ssh'
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
