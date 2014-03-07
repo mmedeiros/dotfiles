@@ -142,6 +142,16 @@ mktar () {
   fi  
 }
 
+startup () {
+  startup=~/Documents/scripts/startup;
+  if [[ -a $startup ]] 
+  then
+    sh $startup; 
+  else
+    echo "startup file does not exist!" 
+  fi  
+}
+
 getenv () {
   getfile=~/Documents/scripts/getenv;
   if [[ -a $getfile ]] 
