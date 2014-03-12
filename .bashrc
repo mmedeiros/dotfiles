@@ -229,6 +229,7 @@ fox () {
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
 alias now='echo $(date +%Y%m%d)'
+alias epoch='date +%s'
 
 # Some ls aliases
 # mac is annoying with --color
