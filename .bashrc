@@ -91,6 +91,7 @@ alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/
 alias gpp='clear && git pull origin && git push' 
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
+alias gs='git status'
 blame () { git blame $1 | less; }
 
 # Smarter SSL info fetcher
@@ -119,6 +120,13 @@ sslmod () {
 	else 
 		echo "Sorry, $1 is not a valid ssl file"; 
 	fi
+}
+
+rmtmp () {
+  for tmp in `find . | grep "~$"` 
+  do
+    rm -i $tmp
+  done
 }
 
 vdie () { 
@@ -228,7 +236,7 @@ fox () {
 
 # Print out the yyyymmdd datestamp for today 
 alias datestamp='echo $(date +%Y%m%d)'
-alias now='echo $(date +%Y%m%d)'
+alias now='echo $(date +%Y%m%d%H%M%S)'
 alias epoch='date +%s'
 
 # Some ls aliases
@@ -273,6 +281,7 @@ alias ehad='head'
 alias cl='clear'
 alias pinf='ping'
 alias ssg='ssh'
+alias vagragnt='vagrant'
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
