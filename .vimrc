@@ -60,6 +60,8 @@ map <leader>ll :setlocal tw=2000000<cr>
 map <leader>da :setlocal tw=2000000 \| setlocal paste \| setlocal nonu<cr>
 " ta for tab 
 map <leader>ta :setlocal expandtab!<cr>
+" Format JSON using ',json' 
+map <leader>json :%!python -m json.tool<cr>
 "------------------------------------------------------
 
 " Only do this part when compiled with support for autocommands.
