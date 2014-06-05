@@ -112,11 +112,11 @@ ssl () {
 sslmod () {
 	line=$(head -n 1 $1)
 	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then 
-		openssl req  -modulus -noout < $1;
+		openssl req  -modulus -noout < $1 | openssl md5;
 	elif [[ $line =~ CERTIFICATE ]] ; then 
-		openssl x509 -modulus -noout < $1;
+		openssl x509 -modulus -noout < $1 | openssl md5;
 	elif [[ $line =~ KEY ]] ; then
-		openssl rsa  -modulus -noout < $1; 
+		openssl rsa  -modulus -noout < $1 | openssl md5; 
 	else 
 		echo "Sorry, $1 is not a valid ssl file"; 
 	fi
@@ -282,6 +282,9 @@ alias cl='clear'
 alias pinf='ping'
 alias ssg='ssh'
 alias vagragnt='vagrant'
+
+alias repro='source ~/.bashrc'
+alias vimpr='vim ~/.bashrc'
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
