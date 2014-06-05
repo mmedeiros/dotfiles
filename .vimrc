@@ -46,6 +46,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+au BufNewFile,BufRead *.yaml,*.yml,*.sls so ~/.vim/syntax/yaml.vim
+
 "-------------- Custom key bindings -------------------
 " Set custom key bindings using comma 
 let mapleader = ","
