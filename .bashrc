@@ -286,5 +286,4 @@ alias vagragnt='vagrant'
 alias repro='source ~/.bashrc'
 alias vimpr='vim ~/.bashrc'
 
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
