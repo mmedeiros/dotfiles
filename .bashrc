@@ -254,7 +254,7 @@ if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='clear; ls -l'
   alias la='ls -Al'
-  alias spacehog='du -s * | sort -nr | head'
+  alias spacehog='du -s * 2>/dev/null | sort -nr | head'
   alias dfh='\df -h -P | column -t'
   alias df='df -P | column -t'
   alias md5sum='md5 -r'
@@ -264,7 +264,7 @@ elif [[ $platform == 'linux' ]]; then
   alias la='ls -Al'
   alias dfh='\df -hP | column -t'
   alias df='df -P | column -t'
-  alias spacehog='du --max-depth=1  | sort -nr  | head'
+  alias spacehog='du --max-depth=1 2> /dev/null  | sort -nr  | head'
 fi
 
 # Typos are annoying 
@@ -286,4 +286,6 @@ alias vagragnt='vagrant'
 alias repro='source ~/.bashrc'
 alias vimpr='vim ~/.bashrc'
 
+HS=/Users/mmedeiros/git_repos/handshake
+alias hs='cd $HS'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
