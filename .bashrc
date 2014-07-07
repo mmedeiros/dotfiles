@@ -17,15 +17,24 @@ if [[ $who =~ root ]]; then
 		*)
 			;;
 	esac
+elif [[ $who =~ mede ]]; then 
+  case "$TERM" in
+    xterm*|rxvt*)
+      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+      ;;  
+    *)  
+      ;;  
+  esac
 else
-	case "$TERM" in
-		xterm*|rxvt*)
-			PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-			PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-			;;
-		*)
-			;;
-	esac
+  case "$TERM" in
+    xterm*|rxvt*)
+      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
+      ;;  
+    *)  
+      ;;  
+  esac
 fi
 
 # root history goes different places on linux/mac, and homedir structure changes 
