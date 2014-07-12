@@ -1,0 +1,6 @@
+HS_ROOT=/Users/mmedeiros/git_repos/handshake
+alias hs='cd $HS_ROOT'
+alias mkpull='open -a /Applications/Firefox.app https://stash.handshake-app.com/projects/HS/repos/handshake/pull-requests?create'
+
+alias hsenv=". $HS_ROOT/djserver/env/bin/activate"
+

@@ -295,6 +295,5 @@ alias vagragnt='vagrant'
 alias repro='source ~/.bashrc'
 alias vimpr='vim ~/.bashrc'
 
-HS=/Users/mmedeiros/git_repos/handshake
-alias hs='cd $HS'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source ~/.bash_includes/handshake 
