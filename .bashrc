@@ -50,6 +50,9 @@ else
   HISTFILE=~/.history/.history
 fi 
 
+# Sometimes I'm not me. Make my homedir available always: 
+MMEDEIROS_HOME=/home/mmedeiros
+
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 HISTFILESIZE=100000
@@ -294,8 +297,8 @@ alias pinf='ping'
 alias ssg='ssh'
 alias vagragnt='vagrant'
 
-alias mede='source ~/.bashrc'
-alias vimpr='vim ~/.bashrc'
+alias mede='source $MMEDEIROS_HOME/.bashrc'
+alias vimpr='vim $MMEDEIROS_HOME/.bashrc'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.bash_includes/handshake
+source $MMEDEIROS_HOME/.bash_includes/handshake
