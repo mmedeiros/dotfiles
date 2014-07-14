@@ -267,6 +267,7 @@ if [[ $platform == 'mac' ]]; then
   alias dfh='\df -h -P | column -t'
   alias df='df -P | column -t'
   alias md5sum='md5 -r'
+  export LSCOLORS="gxfxcxdxbxegedabagacad"
 elif [[ $platform == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias ll='clear; ls -l'
@@ -274,6 +275,7 @@ elif [[ $platform == 'linux' ]]; then
   alias dfh='\df -hP | column -t'
   alias df='df -P | column -t'
   alias spacehog='du --max-depth=1 2> /dev/null  | sort -nr  | head'
+  LS_COLORS='di=0;35' ; export LS_COLORS
 fi
 
 # Typos are annoying 
@@ -292,8 +294,8 @@ alias pinf='ping'
 alias ssg='ssh'
 alias vagragnt='vagrant'
 
-alias repro='source ~/.bashrc'
+alias mede='source ~/.bashrc'
 alias vimpr='vim ~/.bashrc'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.bash_includes/handshake 
+source ~/.bash_includes/handshake
