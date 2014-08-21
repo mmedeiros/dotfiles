@@ -108,7 +108,7 @@ set textwidth=80
 set tabstop=2
 set expandtab 
 syntax on
-colorscheme wombat
+colorscheme molokai
 
 
 

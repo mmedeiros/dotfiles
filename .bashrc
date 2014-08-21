@@ -271,6 +271,7 @@ if [[ $platform == 'mac' ]]; then
   alias df='df -P | column -t'
   alias md5sum='md5 -r'
   export LSCOLORS="gxfxcxdxbxegedabagacad"
+  alias dnsclear='sudo killall -HUP mDNSResponder'
 elif [[ $platform == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias ll='clear; ls -l'
