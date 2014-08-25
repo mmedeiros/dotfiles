@@ -6,7 +6,7 @@
 [ -z "$PS1" ] && return
 
 # Set the xterm title to user@host:dir
-# Red for root! 
+# Red for root!
 who=`whoami`
 if [[ $who =~ root ]]; then
 	case "$TERM" in
@@ -17,40 +17,40 @@ if [[ $who =~ root ]]; then
 		*)
 			;;
 	esac
-elif [[ $who =~ mede ]]; then 
+elif [[ $who =~ mede ]]; then
   case "$TERM" in
     xterm*|rxvt*)
       PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-      ;;  
-    *)  
-      ;;  
+      ;;
+    *)
+      ;;
   esac
 else
   case "$TERM" in
     xterm*|rxvt*)
       PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
       PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-      ;;  
-    *)  
-      ;;  
+      ;;
+    *)
+      ;;
   esac
 fi
 
-# root history goes different places on linux/mac, and homedir structure changes 
-if [[ $who =~ root ]]; then 
+# root history goes different places on linux/mac, and homedir structure changes
+if [[ $who =~ root ]]; then
   if [ -d "/root"  ]; then
-    HISTFILE=/root/.bash_history 
+    HISTFILE=/root/.bash_history
   elif [ -d "/var/root"  ]; then
     HISTFILE=/var/root/.sh_history
-  else 
+  else
     HISTFILE=~/.history/.history
-  fi 
-else 
+  fi
+else
   HISTFILE=~/.history/.history
-fi 
+fi
 
-# Sometimes I'm not me. Make my homedir available always: 
+# Sometimes I'm not me. Make my homedir available always:
 MMEDEIROS_HOME=/home/mmedeiros
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -71,10 +71,10 @@ shopt -s checkwinsize
 ##        Todo.txt        ##
 ############################
 
-# access ToDo from anywhere 
+# access ToDo from anywhere
 PATH=$PATH:/Applications/todo.sh/
 
-# Avoid typing todo.sh every time. 
+# Avoid typing todo.sh every time.
 alias t='clear; todo.sh -d /Users/matt/.todo'
 alias dohome='t list | grep -v @cheet|grep -v @stall|grep -v @project|grep -v @band'
 alias band='t list | grep @band'
@@ -83,14 +83,14 @@ alias band='t list | grep @band'
 ## Welcome to Aliastown!! ##
 ############################
 
-# So little time, so much todo 
+# So little time, so much todo
 alias ctodo='cd /Users/matt/Documents/CM/!!todo/; vim *todo.txt'
 alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.txt'
 
-# Band Stuff 
+# Band Stuff
 alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
-# Hack Utils 
+# Hack Utils
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='/usr/local/sbin/mtr'
@@ -100,7 +100,7 @@ alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
 alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Git for gits
-alias gpp='clear && git pull origin && git push' 
+alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
@@ -109,47 +109,47 @@ blame () { git blame $1 | less; }
 # Smarter SSL info fetcher
 ssl () {
 	line=$(head -n 1 $1)
-	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then 
+	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then
 		openssl req  -text -noout < $1;
-	elif [[ $line =~ CERTIFICATE ]] ; then 
+	elif [[ $line =~ CERTIFICATE ]] ; then
 		openssl x509 -text -noout < $1;
 	elif [[ $line =~ KEY ]] ; then
-		openssl rsa  -text -noout < $1; 
-	else 
-		echo "Sorry, $1 is not a valid ssl file"; 
+		openssl rsa  -text -noout < $1;
+	else
+		echo "Sorry, $1 is not a valid ssl file";
 	fi
 	}
 
-# Smarter SSL modulus 
+# Smarter SSL modulus
 sslmod () {
 	line=$(head -n 1 $1)
-	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then 
+	if   [[ $line =~ "CERTIFICATE REQUEST" ]]; then
 		openssl req  -modulus -noout < $1 | openssl md5;
-	elif [[ $line =~ CERTIFICATE ]] ; then 
+	elif [[ $line =~ CERTIFICATE ]] ; then
 		openssl x509 -modulus -noout < $1 | openssl md5;
 	elif [[ $line =~ KEY ]] ; then
-		openssl rsa  -modulus -noout < $1 | openssl md5; 
-	else 
-		echo "Sorry, $1 is not a valid ssl file"; 
+		openssl rsa  -modulus -noout < $1 | openssl md5;
+	else
+		echo "Sorry, $1 is not a valid ssl file";
 	fi
 }
 
 rmtmp () {
-  for tmp in `find . | grep "~$"` 
+  for tmp in `find . | grep "~$"`
   do
     rm -i $tmp
   done
 }
 
-vdie () { 
+vdie () {
 	`ps aux | grep -i [v]lc | awk '{print $2}' | xargs kill -9`;
 }
 
-nofab () { 
+nofab () {
 	`ps aux | grep [f]ab | grep -v vim | awk '{print \$2}' | xargs kill -9`;
 }
 
-# Tar syntax is a pain in the ass 
+# Tar syntax is a pain in the ass
 alias untar='tar -xvzf '
 
 mktar () {
@@ -159,30 +159,30 @@ mktar () {
     tar cfvz $dir.tgz $dir;
   else
     echo "no specified file or directory for tar ($dir)"
-  fi  
+  fi
 }
 
 startup () {
   startup=~/Documents/scripts/startup;
-  if [[ -a $startup ]] 
+  if [[ -a $startup ]]
   then
-    sh $startup; 
+    sh $startup;
   else
-    echo "startup file does not exist!" 
-  fi  
+    echo "startup file does not exist!"
+  fi
 }
 
 getenv () {
   getfile=~/Documents/scripts/getenv;
-  if [[ -a $getfile ]] 
+  if [[ -a $getfile ]]
   then
-    sh $getfile | pbcopy; 
+    sh $getfile | pbcopy;
   else
-    echo "getenv file does not exist!" 
-  fi  
+    echo "getenv file does not exist!"
+  fi
 }
 
-# grepped process list with header 
+# grepped process list with header
 # shortcut for example "ps faux | head -n1 ; ps faux | grep -C1 [y]um"
 pss () {
   unamestr=`uname`
@@ -190,16 +190,16 @@ pss () {
     echo "pss is currently for unix systems only, sorry"
   else
     word=$1
-    if [ "$#" == "0" ] ; then 
-      ps faux 
+    if [ "$#" == "0" ] ; then
+      ps faux
     else
-      if [ "$#" == "2" ] ; then 
-        if [[ $2 =~ ^-?[0-9]+$ ]] ; then 
+      if [ "$#" == "2" ] ; then
+        if [[ $2 =~ ^-?[0-9]+$ ]] ; then
           l=$2
-        fi  
-      else 
-        l=5 
-      fi  
+        fi
+      else
+        l=5
+      fi
       front=$(echo $word | cut -c 1,2)
       back=$(echo $word | cut -c 3-)
       str="[$front]$back"
@@ -209,25 +209,25 @@ pss () {
   fi
 }
 
-# grep my history faster 
-# shortcut for "history | grep $something | tail -n 10" 
+# grep my history faster
+# shortcut for "history | grep $something | tail -n 10"
 hist () {
-	if [ "$#" == "0" ] ; then 
-		history 
+	if [ "$#" == "0" ] ; then
+		history
 	else
 		history | grep -i $1 | tail
 	fi
 }
 
 # Launch browsers from command line with some syntax checks
-# Google Chrome 
+# Google Chrome
 chrm () {
 	if [[ "$1" =~ https?:// ]] ; then
 		open -a /Applications/Google\ Chrome.app $1;
 	else
 		if [[ "$1" =~ "." ]] ; then
 			open -a /Applications/Google\ Chrome.app http://$1;
-		else 
+		else
 			open -a /Applications/Google\ Chrome.app http://$1.com;
 		fi
 	fi
@@ -240,13 +240,13 @@ fox () {
 	else
 		if [[ "$1" =~ "." ]] ; then
 			open -a /Applications/Firefox.app http://$1;
-		else 
+		else
 			open -a /Applications/Firefox.app http://$1.com;
 		fi
 	fi
 }
 
-# Print out the yyyymmdd datestamp for today 
+# Print out the yyyymmdd datestamp for today
 alias datestamp='echo $(date +%Y%m%d)'
 alias now='echo $(date +%Y%m%d%H%M%S)'
 alias epoch='date +%s'
@@ -282,24 +282,9 @@ elif [[ $platform == 'linux' ]]; then
   LS_COLORS='di=0;35' ; export LS_COLORS
 fi
 
-# Typos are annoying 
-alias grpe='grep' 
-alias gerp='grep'
-alias clera='clear'
-alias clar='clear'
-alias clesr='clear'
-alias claer='clear'
-alias clea='clear'
-alias cler='clear'
-alias vmi='vim'
-alias ehad='head'
-alias cl='clear'
-alias pinf='ping'
-alias ssg='ssh'
-alias vagragnt='vagrant'
-
 alias mede='source $MMEDEIROS_HOME/.bashrc'
 alias vimpr='vim $MMEDEIROS_HOME/.bashrc'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 source $MMEDEIROS_HOME/.bash_includes/handshake
+source $MMEDEIROS_HOME/.bash_includes/typos

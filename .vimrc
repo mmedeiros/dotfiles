@@ -20,7 +20,7 @@ set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-set ignorecase 
+set ignorecase
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -49,20 +49,20 @@ endif
 au BufNewFile,BufRead *.yaml,*.yml,*.sls so ~/.vim/syntax/yaml.vim
 
 "-------------- Custom key bindings -------------------
-" Set custom key bindings using comma 
+" Set custom key bindings using comma
 let mapleader = ","
 
-" Toggle paste mode via ',pp' 
+" Toggle paste mode via ',pp'
 map <leader>pp :setlocal paste!<cr>
 " Toggle line numbering via ',nn'
 map <leader>nn :setlocal number!<cr>
-" long lines 
+" long lines
 map <leader>ll :setlocal tw=2000000<cr>
-" da for data files (need to escape pipe)  
+" da for data files (need to escape pipe)
 map <leader>da :setlocal tw=2000000 \| setlocal paste \| setlocal nonu<cr>
-" ta for tab 
+" ta for tab
 map <leader>ta :setlocal expandtab!<cr>
-" Format JSON using ',json' 
+" Format JSON using ',json'
 map <leader>json :%!python -m json.tool<cr>
 "------------------------------------------------------
 
@@ -106,10 +106,12 @@ set shiftwidth=2
 set wrap
 set textwidth=80
 set tabstop=2
-set expandtab 
+set expandtab
 syntax on
 colorscheme molokai
 
+" Remove spaces at the end of a line
+autocmd BufWritePre * :%s/\s\+$//e
 
 
 " OSX Crontab crap
