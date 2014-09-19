@@ -13,6 +13,7 @@ if [[ $who =~ root ]]; then
 		xterm*|rxvt*)
 			PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 			PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
+			#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[01;33m\]-PEAK\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
 			;;
 		*)
 			;;
@@ -104,6 +105,7 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
+delremote () { git push origin :$1; }
 blame () { git blame $1 | less; }
 
 # Smarter SSL info fetcher
@@ -135,7 +137,7 @@ sslmod () {
 }
 
 rmtmp () {
-  for tmp in `find . | grep "~$"`
+  for tmp in `find . -type f -name '*~' 2> /dev/null | grep -vi dropbox`
   do
     rm -i $tmp
   done
