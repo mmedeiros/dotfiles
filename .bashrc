@@ -105,7 +105,7 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
-gitclean () { git ls-files --deleted -z | xargs -0 git rm }
+gitclean () { git ls-files --deleted -z | xargs -0 git rm; }
 delremote () { git push origin :$1; }
 blame () { git blame $1 | less; }
 
