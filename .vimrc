@@ -64,6 +64,8 @@ map <leader>da :setlocal tw=2000000 \| setlocal paste \| setlocal nonu<cr>
 map <leader>ta :setlocal expandtab!<cr>
 " Format JSON using ',json'
 map <leader>json :%!python -m json.tool<cr>
+" Retab the file
+map <leader>retab gg=G<cr>
 "------------------------------------------------------
 
 " Only do this part when compiled with support for autocommands.
@@ -101,7 +103,6 @@ endif " has("autocmd")
 set autoindent
 set ts=2
 set number
-set bg=dark
 set shiftwidth=2
 set wrap
 set textwidth=80
@@ -109,6 +110,7 @@ set tabstop=2
 set expandtab
 syntax on
 colorscheme molokai
+set bg=dark
 
 " Remove spaces at the end of a line
 autocmd BufWritePre * :%s/\s\+$//e
