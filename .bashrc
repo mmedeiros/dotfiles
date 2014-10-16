@@ -105,6 +105,7 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
+gitclean () { git ls-files --deleted -z | xargs -0 git rm }
 delremote () { git push origin :$1; }
 blame () { git blame $1 | less; }
 
@@ -267,7 +268,7 @@ fi
 if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='clear; ls -l'
-  alias la='ls -Al'
+  alias la='clear; ls -Al'
   alias spacehog='du -s * 2>/dev/null | sort -nr | head'
   alias dfh='\df -h -P | column -t'
   alias df='df -P | column -t'
@@ -277,7 +278,7 @@ if [[ $platform == 'mac' ]]; then
 elif [[ $platform == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias ll='clear; ls -l'
-  alias la='ls -Al'
+  alias la='clear; ls -Al'
   alias dfh='\df -hP | column -t'
   alias df='df -P | column -t'
   alias spacehog='du --max-depth=1 2> /dev/null  | sort -nr  | head'
