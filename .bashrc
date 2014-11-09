@@ -18,7 +18,7 @@ if [[ $who =~ root ]]; then
 		*)
 			;;
 	esac
-elif [[ $who =~ mede ]]; then
+elif [[ $who =~ mede ]] || [[ $who =~ matt ]]; then
   case "$TERM" in
     xterm*|rxvt*)
       PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
