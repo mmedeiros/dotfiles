@@ -1,42 +1,36 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+# Sometimes I'm not me. Make my homedir available always:
+MMEDEIROS_HOME=/home/mmedeiros
+
+# Get all that good env stuff
+for f in $MMEDEIROS_HOME/.bash_includes/*; do source $f; done
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Set the xterm title to user@host:dir
+# Prompt colors:
+PINK=$'\e[1;35m'
+GREEN=$'\e[1;32m'
+WHITE=$'\e[0;37m'
+CYAN=$'\e[1;36m'
+RED=$'\e[1;31m'
+
+# Set the xterm title to user@host:dir(git branch)
 # Red for root!
 who=`whoami`
-if [[ $who =~ root ]]; then
-	case "$TERM" in
-		xterm*|rxvt*)
-			PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-			PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
-			#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[01;33m\]-PEAK\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]\$ '
-			;;
-		*)
-			;;
-	esac
-elif [[ $who =~ mede ]] || [[ $who =~ matt ]]; then
-  case "$TERM" in
-    xterm*|rxvt*)
-      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-      ;;
-    *)
-      ;;
-  esac
-else
-  case "$TERM" in
-    xterm*|rxvt*)
-      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-      PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
-      ;;
-    *)
-      ;;
-  esac
-fi
+
+case "$TERM" in
+  xterm*|rxvt*)
+    if [[ $who =~ root ]]; then
+      PS1='${debian_chroot:+($debian_chroot)}${RED}\u@\h${WHITE}:${RED}\w${PINK}$(__git_ps1)${WHITE}$ '
+    elif [[ $who =~ mede ]] || [[ $who =~ matt ]]; then
+      PS1='${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${WHITE}:${CYAN}\w${PINK}$(__git_ps1)${WHITE}$ '
+    else
+      PS1='${debian_chroot:+($debian_chroot)}${PINK}\u@\h${WHITE}:${CYAN}\w${PINK}$(__git_ps1)${WHITE}$ '
+    fi
+esac
 
 # root history goes different places on linux/mac, and homedir structure changes
 if [[ $who =~ root ]]; then
@@ -50,9 +44,6 @@ if [[ $who =~ root ]]; then
 else
   HISTFILE=~/.history/.history
 fi
-
-# Sometimes I'm not me. Make my homedir available always:
-MMEDEIROS_HOME=/home/mmedeiros
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -289,5 +280,3 @@ alias mede='source $MMEDEIROS_HOME/.bashrc'
 alias vimpr='vim $MMEDEIROS_HOME/.bashrc'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source $MMEDEIROS_HOME/.bash_includes/handshake
-source $MMEDEIROS_HOME/.bash_includes/typos
