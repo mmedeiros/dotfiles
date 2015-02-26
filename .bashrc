@@ -24,11 +24,11 @@ who=`whoami`
 case "$TERM" in
   xterm*|rxvt*)
     if [[ $who =~ root ]]; then
-      PS1='${debian_chroot:+($debian_chroot)}${RED}\u@\h${WHITE}:${RED}\w${PINK}$(__git_ps1)${WHITE}$ '
+      PS1='${debian_chroot:+($debian_chroot)}\[${RED}\]\u@\h\[${WHITE}\]:\[${RED}\]\w\[${PINK}\]$(__git_ps1)\[${WHITE}\]$ '
     elif [[ $who =~ mede ]] || [[ $who =~ matt ]]; then
-      PS1='${debian_chroot:+($debian_chroot)}${GREEN}\u@\h${WHITE}:${CYAN}\w${PINK}$(__git_ps1)${WHITE}$ '
+      PS1='${debian_chroot:+($debian_chroot)}\[${GREEN}\]\u@\h\[${WHITE}\]:\[${CYAN}\]\w\[${PINK}\]$(__git_ps1)\[${WHITE}\]$ '
     else
-      PS1='${debian_chroot:+($debian_chroot)}${PINK}\u@\h${WHITE}:${CYAN}\w${PINK}$(__git_ps1)${WHITE}$ '
+      PS1='${debian_chroot:+($debian_chroot)}\[${PINK}\]\u@\h\[${WHITE}\]:\[${CYAN}\]\w$\[{PINK}\]$(__git_ps1)\[${WHITE}\]$ '
     fi
 esac
 
