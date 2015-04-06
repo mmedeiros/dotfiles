@@ -86,9 +86,9 @@ alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='/usr/local/sbin/mtr'
-alias sudo='echo source /home/mmedeiros/.bashrc; sudo'
-alias vim='vim -u /home/mmedeiros/.vimrc'
-alias vimdiff='vimdiff -u /home/mmedeiros/.vimrc'
+alias sudo="echo source $MMEDEIROS_HOME/.bashrc; sudo"
+alias vim="vim -u $MMEDEIROS_HOME/.vimrc"
+alias vimdiff='vimdiff -u $MMEDEIROS_HOME/.vimrc'
 alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Git for gits
