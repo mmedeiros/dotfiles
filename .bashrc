@@ -2,7 +2,16 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 # Sometimes I'm not me. Make my homedir available always:
-MMEDEIROS_HOME=/home/mmedeiros
+
+if [ -d "/home/mmedeiros"  ]; then
+  MMEDEIROS_HOME=/home/mmedeiros
+elif [ -d "/home/matt.m"  ]; then
+  MMEDEIROS_HOME=/home/matt.m
+elif [ -d "/home/matt"  ]; then
+  MMEDEIROS_HOME=/home/matt
+else
+  MMEDEIROS_HOME=$HOME
+fi
 
 # Get all that good env stuff
 for f in $MMEDEIROS_HOME/.bash_includes/*; do source $f; done
