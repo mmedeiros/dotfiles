@@ -1,6 +1,16 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
+# This is my .bashrc file, there are many like it, but this one is mine.
+#
+# My .bashrc file is my best friend. It is my life.
+# I must master it as I must master my life.
+#
+# Without me my .bashrc file is useless.
+# Without my .bashrc file, I am (practically) useless.
+#
+# I must source my .bashrc file true.
+# I must debug my system, who is trying to bug me.
+# I will...
+
 # Sometimes I'm not me. Make my homedir available always:
 
 if [ -d "/home/mmedeiros"  ]; then
@@ -60,6 +70,13 @@ HISTFILESIZE=100000
 HISTSIZE=10000
 export HISTTIMEFORMAT='%F %T '
 
+if [ -d "$MMEDEIROS_HOME/bin"  ]; then
+  PATH=$PATH:$MMEDEIROS_HOME/bin
+fi
+
+if [ -d "$MMEDEIROS_HOME/Documents/scripts"  ]; then
+  PATH=$PATH:$MMEDEIROS_HOME/Documents/scripts
+fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -288,4 +305,7 @@ fi
 alias mede='source $MMEDEIROS_HOME/.bashrc'
 alias vimpr='vim $MMEDEIROS_HOME/.bashrc'
 
+# Ruby and perl stuff
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PERL_MB_OPT="--install_base \"$MMEDEIROS_HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$MMEDEIROS_HOME/perl5"; export PERL_MM_OPT;
