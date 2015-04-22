@@ -122,9 +122,10 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
-gitclean () { git ls-files --deleted -z | xargs -0 git rm; }
+gitnuke  ()  { git fetch --all && git reset --hard origin/master; }
+gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
 delremote () { git push origin :$1; }
-blame () { git blame $1 | less; }
+blame ()     { git blame $1 | less; }
 
 # Smarter SSL info fetcher
 ssl () {
@@ -309,3 +310,5 @@ alias vimpr='vim $MMEDEIROS_HOME/.bashrc'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PERL_MB_OPT="--install_base \"$MMEDEIROS_HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$MMEDEIROS_HOME/perl5"; export PERL_MM_OPT;
+complete -C aws_completer aws
+
