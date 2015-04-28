@@ -122,7 +122,7 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
-gitnuke  ()  { git fetch --all && git reset --hard origin/master; }
+gitnuke ()   { git fetch --all && git reset --hard origin/master; }
 gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
 delremote () { git push origin :$1; }
 blame ()     { git blame $1 | less; }
