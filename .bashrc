@@ -110,7 +110,7 @@ alias follow='cd /Users/matt/Documents/CM/!!todo; vim -o followup.txt work_done.
 alias kdo='cd /Users/matt/Documents/band\ stuff/kalopsia/demo_web'
 
 # Hack Utils
-alias finf='find . 2> /dev/null |  xargs grep -li 2>/dev/null'
+alias finf='find . -type f 2> /dev/null |  xargs grep -li 2>/dev/null'
 alias toobig='find * ! -type l -ls | sort -k 7nr'
 alias mtr='/usr/local/sbin/mtr'
 alias sudo="echo source $MMEDEIROS_HOME/.bashrc; sudo"
@@ -125,6 +125,7 @@ alias punch='blame'
 alias gs='git status'
 gitnuke ()   { git fetch --all && git reset --hard origin/master; }
 gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
+gitlast ()   { git diff HEAD^ HEAD $1; }
 delremote () { git push origin :$1; }
 blame ()     { git blame $1 | less; }
 
@@ -313,3 +314,5 @@ PERL_MB_OPT="--install_base \"$MMEDEIROS_HOME/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$MMEDEIROS_HOME/perl5"; export PERL_MM_OPT;
 complete -C aws_completer aws
 
+GEM_HOME="$GEM_HOME:/usr/local/var/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0"
+GEM_PATH="$GEM_PATH:/usr/local/var/rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems"
