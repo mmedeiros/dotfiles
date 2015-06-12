@@ -115,6 +115,10 @@ set bg=dark
 " Remove spaces at the end of a line
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Set filetypes for common Chef files
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
+autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 
 " OSX Crontab crap
 if $VIM_CRONTAB == "true"
