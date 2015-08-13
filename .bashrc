@@ -125,7 +125,7 @@ alias punch='blame'
 alias gs='git status'
 gitnuke ()   { git fetch --all && git reset --hard origin/master; }
 gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
-gitlast ()   { git diff HEAD^ HEAD $1; }
+gitlast ()   { git diff -w HEAD^ HEAD $*; }
 delremote () { git push origin :$1; }
 blame ()     { git blame $1 | less; }
 
@@ -203,6 +203,12 @@ getenv () {
   else
     echo "getenv file does not exist!"
   fi
+}
+
+# If the first Chef run fails, you need to call
+# the config file directly. Shortcut this.
+cheff () {
+  chef-client --once -E stg -j /etc/chef/first-boot.json
 }
 
 # grepped process list with header
@@ -288,6 +294,7 @@ fi
 if [[ $platform == 'mac' ]]; then
   alias ls='ls -G'
   alias ll='clear; ls -l'
+  alias lz='clear; ls -Sal'
   alias la='clear; ls -Al'
   alias spacehog='du -s * 2>/dev/null | sort -nr | head'
   alias dfh='\df -h -P | column -t'
@@ -298,6 +305,7 @@ if [[ $platform == 'mac' ]]; then
 elif [[ $platform == 'linux' ]]; then
   alias ls='ls --color=auto'
   alias ll='clear; ls -l'
+  alias lz='clear; ls -Sal'
   alias la='clear; ls -Al'
   alias dfh='\df -hP | column -t'
   alias df='df -P | column -t'
