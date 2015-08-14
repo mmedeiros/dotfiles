@@ -238,6 +238,11 @@ pss () {
   fi
 }
 
+# list the open ports with less typing
+neto () {
+  netstat -an | grep -i list
+}
+
 # grep my history faster
 # shortcut for "history | grep $something | tail -n 10"
 hist () {
