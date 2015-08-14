@@ -208,7 +208,25 @@ getenv () {
 # If the first Chef run fails, you need to call
 # the config file directly. Shortcut this.
 cheff () {
-  chef-client --once -E stg -j /etc/chef/first-boot.json
+  chefhost=`hostname`
+  if [[ $chefhost  =~ \.stg\. ]]; then
+    chefenv='stg'
+  elif [[ $chefhost  =~ \.qa\. ]]; then
+    chefenv='qa'
+  elif [[ $chefhost  =~ \.inf\. ]]; then
+    chefenv='inf'
+  elif [[ $chefhost  =~ \.demo\. ]]; then
+    chefenv='demo'
+  elif [[ $chefhost  =~ \.dev\. ]]; then
+    chefenv='dev'
+  else
+    echo "no environment in hostname"
+    echo "please run manually"
+    exit 1
+  fi
+
+  echo "chef-client --once -E $chefenv -j /etc/chef/first-boot.json"
+  chef-client --once -E $chefenv -j /etc/chef/first-boot.json
 }
 
 # grepped process list with header
