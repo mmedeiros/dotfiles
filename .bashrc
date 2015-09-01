@@ -123,6 +123,8 @@ alias gpp='clear && git pull origin && git push'
 alias gitlog='git log --oneline --color --graph --decorate'
 alias punch='blame'
 alias gs='git status'
+gitdiff ()   { git diff --cached ; }
+gitcom ()    { git checkout master ;}
 gitnuke ()   { git fetch --all && git reset --hard origin/master; }
 gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
 gitlast ()   { git diff -w HEAD^ HEAD $*; }
@@ -227,6 +229,10 @@ cheff () {
 
   echo "chef-client --once -E $chefenv -j /etc/chef/first-boot.json"
   chef-client --once -E $chefenv -j /etc/chef/first-boot.json
+}
+
+purgemail(){
+  postsuper -d ALL
 }
 
 # grepped process list with header
