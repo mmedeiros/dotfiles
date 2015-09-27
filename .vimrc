@@ -114,6 +114,7 @@ set bg=dark
 
 " Remove spaces at the end of a line
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 " Set filetypes for common Chef files
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
