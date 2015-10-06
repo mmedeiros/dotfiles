@@ -321,23 +321,25 @@ elif [[ "$unamestr" =~ Linux ]]; then
 fi
 
 if [[ $platform == 'mac' ]]; then
-  alias ls='ls -G'
-  alias ll='clear; ls -l'
-  alias lz='clear; ls -Sal'
-  alias la='clear; ls -Al'
-  alias spacehog='du -s * 2>/dev/null | sort -nr | head'
+  alias df='df -P | column -t'
   alias dfh='\df -h -P | column -t'
-  alias df='df -P | column -t'
-  alias md5sum='md5 -r'
-  export LSCOLORS="gxfxcxdxbxegedabagacad"
   alias dnsclear='sudo killall -HUP mDNSResponder'
-elif [[ $platform == 'linux' ]]; then
-  alias ls='ls --color=auto'
-  alias ll='clear; ls -l'
-  alias lz='clear; ls -Sal'
   alias la='clear; ls -Al'
-  alias dfh='\df -hP | column -t'
+  alias ll='clear; ls -l'
+  alias lr='clear; ls -ltr'
+  alias ls='ls -G'
+  alias lz='clear; ls -Sal'
+  alias md5sum='md5 -r'
+  alias spacehog='du -s * 2>/dev/null | sort -nr | head'
+  export LSCOLORS="gxfxcxdxbxegedabagacad"
+elif [[ $platform == 'linux' ]]; then
   alias df='df -P | column -t'
+  alias dfh='\df -hP | column -t'
+  alias la='clear; ls -Al'
+  alias ll='clear; ls -l'
+  alias lr='clear; ls -ltr'
+  alias ls='ls --color=auto'
+  alias lz='clear; ls -Sal'
   alias spacehog='du --max-depth=1 2> /dev/null  | sort -nr  | head'
   LS_COLORS='di=0;35' ; export LS_COLORS
 fi
