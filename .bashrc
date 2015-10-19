@@ -227,8 +227,14 @@ cheff () {
     exit 1
   fi
 
-  echo "chef-client --once -E $chefenv -j /etc/chef/first-boot.json"
-  chef-client --once -E $chefenv -j /etc/chef/first-boot.json
+  if [[ $who =~ root ]]; then
+    echo "chef-client --once -E $chefenv -j /etc/chef/first-boot.json"
+    chef-client --once -E $chefenv -j /etc/chef/first-boot.json
+  else
+    echo "User $who is not root, using sudo:"
+    echo "chef-client --once -E $chefenv -j /etc/chef/first-boot.json"
+    sudo chef-client --once -E $chefenv -j /etc/chef/first-boot.json
+  fi
 }
 
 purgemail(){
