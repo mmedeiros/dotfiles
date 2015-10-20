@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+docklog() {
+  id=$(docker ps --all=true | grep "$1" | head -n1 | awk '{print $1}')
+  echo "----- docker log for $id -----"
+  docker logs "$id"
+  echo
+}
+
+docknuke() {
+  echo "Nuking all docker containers!"
+  for i in `docker ps --all=true | grep -v CONTAINER | awk '{print $1}'`
+    do
+      docker rm -f "$i";
+    done
+  echo
+}
+
+dockssh() {
+  id=$(docker ps --all=true | grep "$1" | head -n1 | awk '{print $1}')
+  echo "----- connecting to docker $id -----"
+  docker exec -ti "$id" sh
+  echo
+}
+
+docksee() {
+  id=$(docker ps --all=true | grep "$1" | head -n1 | awk '{print $1}')
+  echo "----- docker inspect for $id -----"
+  docker inspect "$id"
+  echo
+}
