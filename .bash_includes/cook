@@ -1,0 +1,12 @@
+cook ()
+{
+    cookbooks=($(ls "$COOKBOOKS"));
+    local e;
+    for e in "${cookbooks[@]}";
+    do
+        if [[ "$e" =~ "$1" ]]; then
+            echo "cookbook $e exists!";
+            cd "$COOKBOOKS/$e";
+        fi;
+    done
+}

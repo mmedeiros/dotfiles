@@ -1,0 +1,20 @@
+nuke_collectd() {
+  awk=$(which awk)
+  ps=$(which ps)
+  grep=$(which grep)
+  xargs=$(which xargs)
+  pkill=$(which kill)
+  uptime ;
+  service collectd stop ;
+  sleep 3  ;
+  pidlist=$($ps aux | $grep [c]ollectd | $awk '{print $2}');
+  echo "killing $pidlist"
+  $pkill "-s -9 $pidlist"
+  sleep 2 ;
+  echo "starting collectd"
+  service collectd start ;
+  echo "getting collectd status"
+  service collectd status ;
+  echo
+  uptime
+}

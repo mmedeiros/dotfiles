@@ -1,0 +1,3 @@
+if [ -d "/opt/graphite/storage/whisper" ]; then
+  WHISPER="/opt/graphite/storage/whisper"
+fi
