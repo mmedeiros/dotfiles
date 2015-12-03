@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 nuke_collectd() {
   awk=$(which awk)
   ps=$(which ps)
