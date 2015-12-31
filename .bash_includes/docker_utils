@@ -29,3 +29,15 @@ docksee() {
   docker inspect "$id"
   echo
 }
+
+find_big_docker_logs() {
+  dockerpath='/var/lib/docker/containers/'
+  size="$1"
+  #size='1G'
+  find=$(which find)
+
+  logs=$("$find" "$dockerpath" -type f -name "*-json.log" -size +"$size")
+  # find /var/lib/docker/containers/ -type f -name "*-json.log" -size +5G
+
+  echo "$logs"
+}
