@@ -13,5 +13,6 @@ alias cl='clear'
 alias pinf='ping'
 alias ssg='ssh'
 alias ssj='ssh'
+alias shh='ssh'
 alias vagragnt='vagrant'
 
