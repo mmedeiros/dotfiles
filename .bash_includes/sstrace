@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+sstrace() {
+  if [ ! -d "${MMEDEIROS_HOME}/tmp"  ]; then
+    mkdir "${MMEDEIROS_HOME}/tmp"
+  fi
+
+  # Define some variables
+  now=$(date +%Y%m%d%H%M%S)
+  name="sstrace"
+  strace_file="${MMEDEIROS_HOME}/tmp/${now}-strace.log"
+  log_file="${MMEDEIROS_HOME}/tmp/${now}-log.log"
+  strace_opts="-s 4096 -e trace=file -f -ttt -o $strace_file"
+  strace_command="$(which strace) $strace_opts $@ > $log_file"
+  #echo "$strace_command"
+
+  # Run as root
+  who=$(whoami)
+  if [[ $who =~ root ]]; then
+    eval "$strace_command"
+  else
+    echo "$name: User $who is not root, using sudo:"
+    eval $(which sudo) "$strace_command"
+  fi
+
+  # Give the user output
+  echo "program output is here:"
+  echo "less $log_file"
+  echo "strace output is here:"
+  echo "less $strace_file"
+}
