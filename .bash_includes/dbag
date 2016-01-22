@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CHEF='/Users/matt.m/git_repos/chef'
+
+dbag () {
+  if [ -d "$CHEF" ]; then
+    cd $CHEF
+    echo "Decrypting databag"
+    knife data bag show -Fj $1 $2 --secret-file /etc/chef/encrypted_data_bag_secret
+    cd -
+  else
+    echo "Directory does not exist: $CHEF"
+  fi
+}
