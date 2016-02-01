@@ -340,6 +340,7 @@ if [[ $platform == 'mac' ]]; then
   alias md5sum='md5 -r'
   alias spacehog='du -s * 2>/dev/null | sort -nr | head'
   export LSCOLORS="gxfxcxdxbxegedabagacad"
+  MYIP="127.0.0.1"
 elif [[ $platform == 'linux' ]]; then
   alias df='df -P | column -t'
   alias dfh='\df -hP | column -t'
@@ -350,6 +351,7 @@ elif [[ $platform == 'linux' ]]; then
   alias lz='clear; ls -Sal'
   alias spacehog='du --max-depth=1 2> /dev/null  | sort -nr  | head'
   LS_COLORS='di=0;35' ; export LS_COLORS
+  MYIP=$(ifconfig eth0| grep 'inet addr' | cut -d':' -f2 | cut -d' ' -f1)
 fi
 
 alias mede='source $MMEDEIROS_HOME/.bashrc'
