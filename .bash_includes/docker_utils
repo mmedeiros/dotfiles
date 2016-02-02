@@ -16,6 +16,15 @@ docknuke() {
   echo
 }
 
+docknukemore() {
+  echo "oh snap, ultranuke!!!"
+  for i in `docker images  | grep sam | awk '{print $3}'`
+  do
+    docker rmi -f "$i";
+  done
+  echo
+}
+
 dockssh() {
   id=$(docker ps --all=true | grep "$1" | head -n1 | awk '{print $1}')
   echo "----- connecting to docker $id -----"
