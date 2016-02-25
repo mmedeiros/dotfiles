@@ -213,6 +213,10 @@ cheff () {
   chefhost=`hostname`
   if [[ $chefhost  =~ \.stg\. ]]; then
     chefenv='stg'
+  elif [[ $chefhost  =~ \.stg-green\. ]]; then
+    chefenv='stg-green'
+  elif [[ $chefhost  =~ \.stg-blue\. ]]; then
+    chefenv='stg-blue'
   elif [[ $chefhost  =~ \.qa\. ]]; then
     chefenv='qa'
   elif [[ $chefhost  =~ \.prod\. ]]; then
