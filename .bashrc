@@ -221,6 +221,10 @@ cheff () {
     chefenv='qa'
   elif [[ $chefhost  =~ \.prod\. ]]; then
     chefenv='prod'
+  elif [[ $chefhost  =~ \.prod-green\. ]]; then
+    chefenv='prod-green'
+  elif [[ $chefhost  =~ \.prod-blue\. ]]; then
+    chefenv='prod-blue'
   elif [[ $chefhost  =~ \.inf\. ]]; then
     chefenv='inf'
   elif [[ $chefhost  =~ \.demo\. ]]; then
