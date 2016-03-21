@@ -1,0 +1,9 @@
+if [ -d "$MMEDEIROS_HOME/git_repos"  ]; then
+  export MY_GIT_DIR="$MMEDEIROS_HOME/git_repos"
+  export MY_CHEF_DIR="$MY_GIT_DIR/chef"
+  export MY_COOKBOOKS="$MY_CHEF_DIR/cookbooks"
+elif [ -d "$MMEDEIROS_HOME/git"  ]; then
+  export MY_GIT_DIR="$MMEDEIROS_HOME/git"
+  export MY_CHEF_DIR="$MY_GIT_DIR/chef"
+  export MY_COOKBOOKS="$MY_CHEF_DIR/cookbooks"
+fi

@@ -1,0 +1,29 @@
+cvdiff() {
+  cd $MY_CHEF_DIR/environments
+  grep $1 *json | grep ': \"=' |column -t | sort -k3
+  cd - 1>/dev/null
+}
+
+dbag () {
+  if [ -d "$MY_CHEF_DIR" ]; then
+    cd $MY_CHEF_DIR
+    echo "Decrypting databag"
+    knife data bag show -Fj $1 $2 --secret-file /etc/chef/encrypted_data_bag_secret
+    cd -
+  else
+    echo "MY_CHEF_DIR Directory does not exist: $MY_CHEF_DIR"
+  fi
+}
+
+cook ()
+{
+    cookbooks=($(ls "$MY_COOKBOOKS"));
+    local e;
+    for e in "${cookbooks[@]}";
+    do
+        if [[ "$e" =~ "$1" ]]; then
+            echo "cookbook $e exists!";
+            cd "$MY_COOKBOOKS/$e";
+        fi;
+    done
+}

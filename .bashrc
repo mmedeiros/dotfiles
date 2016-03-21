@@ -118,19 +118,6 @@ alias vim="vim -u $MMEDEIROS_HOME/.vimrc"
 alias vimdiff='vimdiff -u $MMEDEIROS_HOME/.vimrc'
 alias lockit='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
-# Git for gits
-alias gpp='clear && git pull origin && git push'
-alias gitlog='git log --oneline --color --graph --decorate'
-alias punch='blame'
-alias gs='git status'
-gitdiff ()   { git diff --cached ; }
-gitcom ()    { git checkout master ;}
-gitnuke ()   { git fetch --all && git reset --hard origin/master; }
-gitclean ()  { git ls-files --deleted -z | xargs -0 git rm; }
-gitlast ()   { git diff -w HEAD^ HEAD $*; }
-delremote () { git push origin :$1; }
-blame ()     { git blame $1 | less; }
-
 # Smarter SSL info fetcher
 ssl () {
 	line=$(head -n 1 $1)
